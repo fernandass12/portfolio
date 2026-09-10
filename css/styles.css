@@ -1,0 +1,887 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 560px) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+
+
+
+/*
+* Aquí empieza el proyecto
+*/
+
+/* Variables */
+:root {
+  --color-black: #151515;
+  --color-dark: #242424;
+  --color-green: #4ee1a0;
+  --color-grey: #d9d9d9;
+  --color-white: #ffffff;
+  --color-error: #ff6f5b;
+
+  --font-main: 'Space Grotesk', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--color-grey);
+  background-color: var(--color-black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.pattern {
+  position: absolute;
+}
+
+
+/* Botón */
+.button {
+  display: inline-block;
+  padding: 0 0 10px;
+  border: 0;
+  border-bottom: 2px solid var(--color-green);
+  background: none;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 2.29px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color .25s;
+}
+
+.button:hover {
+  color: var(--color-green);
+}
+
+
+/* Header */
+.header {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-top: 20px;
+}
+
+.logo {
+  display: block;
+  transition: opacity 0.25s;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+.logo img {
+  width: 135px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.social a {
+  display: block;
+}
+
+.icon-hover {
+  display: none;
+}
+
+.social a:hover .icon {
+  display: none;
+}
+
+.social a:hover .icon-hover {
+  display: block;
+}
+
+.social img {
+  height: 20px;
+}
+
+
+/* Hero */
+.hero {
+  padding-top: 0;
+}
+
+.pattern-rings-hero {
+  top: 20px;
+  left: -245px;
+  width: 430px;
+}
+
+.pattern-circle {
+  top: 201px;
+  right: -66px;
+  width: 129px;
+}
+
+.hero-image {
+  width: 174px;
+  height: 383px;
+  margin: -87px auto 0;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -1.14px;
+}
+
+.hero-name {
+  border-bottom: 4px solid var(--color-green);
+}
+
+.hero-text {
+  max-width: 445px;
+  margin: 24px auto;
+}
+
+
+/* Skills */
+.skills {
+  margin-top: 80px;
+}
+
+.pattern-rings-skills {
+  right: -275px;
+  bottom: 30px;
+  width: 430px;
+}
+
+.skills-list {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding: 40px 0 0;
+  border-top: 1px solid var(--color-white);
+  text-align: center;
+}
+
+.skill-name {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+
+/* Projects */
+.projects {
+  padding: 80px 16px;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -1.14px;
+}
+
+.projects-list {
+  display: grid;
+  gap: 40px;
+}
+
+.project-image {
+  width: 100%;
+  height: 253px;
+  object-fit: cover;
+}
+
+.project-title {
+  margin: 20px 0 7px;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+
+.project-tags {
+  display: flex;
+  gap: 18px;
+  text-transform: uppercase;
+}
+
+.project-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+
+/* Contact */
+.contact {
+  padding: 60px 0 90px;
+  background-color: var(--color-dark);
+}
+
+.pattern-rings-contact {
+  bottom: -60px;
+  left: -245px;
+  width: 430px;
+}
+
+.contact-inner {
+  display: grid;
+  gap: 50px;
+}
+
+.contact-intro {
+  position: relative;
+  text-align: center;
+}
+
+.contact-text {
+  max-width: 445px;
+  margin: 20px auto 0;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 0 24px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--color-white);
+  background: none;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.22px;
+  color: var(--color-white);
+  transition: border-color 0.25s;
+}
+
+.form-field::placeholder {
+  text-transform: uppercase;
+  color: var(--color-white);
+  opacity: 0.5;
+}
+
+.form-field:hover,
+.form-field:focus {
+  outline: none;
+  border-bottom-color: var(--color-green);
+}
+
+.form-message {
+  height: 107px;
+  resize: none;
+}
+
+.form-email:invalid {
+  padding-right: 48px;
+  border-bottom-color: var(--color-error);
+  background: url(../img/icons/invalid.svg) no-repeat right top;
+}
+
+.form-error {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.17px;
+  color: var(--color-error);
+}
+
+.form-email:invalid + .form-error {
+  display: block;
+}
+
+.form .button {
+  align-self: flex-end;
+}
+
+
+/* Footer */
+.footer {
+  background-color: var(--color-dark);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--color-white);
+}
+
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  /* Header */
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  .logo img {
+    width: 169px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 541px;
+    padding-top: 0;
+  }
+
+  .hero-image {
+    position: absolute;
+    top: -59px;
+    right: 0;
+    width: 322px;
+    height: 600px;
+    margin: 0;
+  }
+
+  .pattern-rings-hero {
+    top: 66px;
+    left: -163px;
+  }
+
+  .pattern-circle {
+    top: 408px;
+    right: -61px;
+  }
+
+  .hero-content {
+    margin-top: 100px;
+    text-align: left;
+  }
+
+  .hero-title {
+    max-width: 560px;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -2.05px;
+  }
+
+  .hero-text {
+    margin: 60px 0 66px;
+  }
+
+  /* Skills */
+  .skills {
+    margin-top: 60px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 67px 24px;
+    padding: 66px 0 0;
+    text-align: left;
+  }
+
+  .skill-name {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -1.5px;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 100px 30px;
+  }
+
+  .projects-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -2.05px;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 24px;
+  }
+
+  .project-tags {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 60px 0 90px;
+  }
+
+  .contact-text {
+    margin-top: 36px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 445px;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Header */
+  .header {
+    padding-top: 39px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 652px;
+  }
+
+  .hero-image {
+    top: -68px;
+    right: 30px;
+    width: 445px;
+    height: 720px;
+  }
+
+  .pattern-rings-hero {
+    top: 62px;
+    left: -135px;
+  }
+
+  .pattern-circle {
+    top: 446px;
+    right: 411px;
+  }
+
+  .hero-content {
+    margin-top: 120px;
+  }
+
+  .hero-title {
+    max-width: 750px;
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+  }
+
+  .hero-text {
+    margin: 43px 0 66px;
+  }
+
+  /* Skills */
+  .skills {
+    margin-top: 105px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 58px 30px;
+    padding: 72px 0 0;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 140px 30px;
+  }
+
+  .projects-header {
+    margin-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+  }
+
+  .projects-list {
+    gap: 70px 30px;
+  }
+
+  .project-image {
+    height: 400px;
+  }
+
+  .project {
+    position: relative;
+  }
+
+  .project-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    background-color: rgba(0, 0, 0, .75);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .project:hover .project-links {
+    opacity: 1;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 84px 0 92px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 445px 445px;
+    justify-content: space-between;
+  }
+
+  .contact-intro {
+    text-align: left;
+  }
+
+  .contact-text {
+    margin: 36px 0 0;
+  }
+
+  .pattern-rings-contact {
+    bottom: -120px;
+    left: -225px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    padding: 48px 0 92px;
+  }
+}
